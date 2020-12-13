@@ -1,0 +1,148 @@
+/* Root styling */
+/* Accessible colour combo from http://www.sussex.ac.uk/tel/resource/tel_website/accessiblecontrast/?q=FFFFFF~003b49~1d4289~94a596~e56db1~d3273e~00bfb2~d6d2c4~ffc845~dc582a~41b6e6~1b365d~be84a3~5d3754~7da1c4~f2c75c~d0d3d4~007a78~000000 */
+:root {
+    --white: #ffffff;
+    --light: #b3efff;
+    --bright: #00cfff;
+    --medium: #046B99;
+    --dark: #1c304a;
+    --black: #000000;
+    /* Accessible Standards */
+    line-height: 1.5em!important;
+    letter-spacing: 0.12em!important;
+    word-spacing: 0.16em!important;
+}
+
+/* Heading Bar */
+.heading-bar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    border-top: 1px solid var(--dark);
+    border-left: 1px solid var(--dark);
+    border-right: 1px solid var(--dark);
+    padding: 0.75em;
+    margin: auto;
+    background-color: var(--medium);
+    color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading-bar button {
+    padding: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--light);
+    color: var(--dark);
+    text-shadow: 0 1px 1px var(--white);
+}
+
+.heading-bar button:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    text-shadow: 0 1px 1px var(--black);
+    border: 1px solid var(--light);
+    cursor: pointer;
+}
+
+/* Post Board */
+.post-board {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.post-board .post-titles {
+    -webkit-box-flex: 40%;
+    -moz-box-flex: 40%;
+    -webkit-flex: 40%;
+    -ms-flex: 40%;
+    flex: 40%;
+    margin: 0;
+}
+
+.post-board ul {
+    padding: 0;
+    margin: auto;
+}
+
+.post-board .articles {
+    -webkit-box-flex: 60%;
+    -moz-box-flex: 60%;
+    -webkit-flex: 60%;
+    -ms-flex: 60%;
+    flex: 60%;
+    margin: 0;
+}
+
+/* Post Card */
+.post-card {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0 0 0.5em 0;
+    border-top: 1px solid var(--dark);
+    border-left: 1px solid var(--dark);
+    border-bottom: 1px solid var(--dark);
+    border-right: 1px solid var(--dark);
+    box-shadow: 10px 8px 5px #888888;
+    background-color: var(--light);
+}
+
+.post-card h2 {
+    text-rendering: optimizeLegibility;
+    padding: 0.5rem;
+}
+
+.post-card button {
+    padding: 1.2em;
+}
+
+.post-card button:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    text-shadow: 0 1px 1px var(--black);
+    border: 1px solid var(--light);
+    cursor: pointer;
+}
+
+/* Articles */
+.articles article {
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-top: 1px solid var(--dark);
+}
+
+/* Default Button */
+button {
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px var(--dark);
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 12pt!important;
+    text-shadow: 0 1px 1px var(--dark);
+    background-color: var(--medium);
+}
+
+/* Not overly sure on this, but seems good for keyboard access to give indication of current selection */
+button:focus {
+    outline: 0.4em solid var(--black);
+}
+
+/* Util */
+.App {
+    text-align: left;
+    margin: auto;
+    background-color: var(--app-colour);
+    color: var(--dark);
+}
