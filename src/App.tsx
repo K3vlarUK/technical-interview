@@ -4,6 +4,7 @@ import './App.css';
 function App(props: any) {
 
   const [state, setState] = useState(props.initialState);
+  const [showScroll, setShowScroll] = useState(false);
 
   const getPosts = (cb: any) => {
     try {
@@ -37,11 +38,27 @@ function App(props: any) {
         updateView.view = json;
         
         setState(updateView);
+        scrollTop();
       })
     } catch (error) {
       // Just a basic log to the console for debugging - Could be used to render Failed to load message.
       console.log(error);
     }
+  }
+
+  // Added this in as if you click a post far down, it is pretty horrible that you have to then scroll all the way back up to read the current post.
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400){
+      setShowScroll(false);
+    }
+  };
+  // Not ideal for react, but it works for what I needed it for.
+  window.addEventListener('scroll', checkScrollTop);
+
+  const scrollTop = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   return (
